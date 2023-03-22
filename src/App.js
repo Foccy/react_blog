@@ -84,9 +84,8 @@ function App() {
        : null}
     </div>
   );
-}
-
-function Modal(props) {
+  
+  function Modal() {
     return (
       <>
         <div className="modal">
@@ -103,5 +102,6 @@ function Modal(props) {
         </div>
       </>
     );
-  }
+          }
+        }
 export default App;
