@@ -1,0 +1,18 @@
+
+.App {
+  .Container{
+    width:100%;
+    background-color: red;
+    .Inner{
+      width:100%;
+      margin:auto;
+      max-width: 1400px;
+      .banner-nav{
+        width:100%;
+        h1{
+        }
+      }
+    }
+  }
+}
+
