@@ -14,6 +14,7 @@ function App() {
   let [따봉, 따봉변경] = useState(0);
 
   let [modal, modal변경] = useState(false);
+  let [누른제목, 누른제목변경] = useState(0);
   /* state는 변수대신 쓰는 데이터 저장공간, useState()이용해 만들어야함 */
   
 
@@ -58,11 +59,11 @@ function App() {
 
     {반복된UI()}
 
-      {글제목.map(function(글){ 
+      {글제목.map(function(글 ,i){ 
         return(
         <>
           <div className="list">
-          <h3 onClick={() => {modal변경(true);}}>{글}</h3>
+          <h3 onClick={() => {누른제목변경(i)}}>{글}</h3>
           <span onClick={() => { 따봉변경(따봉 + 1);}}>
             👍
           </span>
@@ -74,22 +75,30 @@ function App() {
         )
       })
     }
+      <button onClick={()=>{누른제목변경(0)}}>버튼1</button>
+      <button onClick={()=>{누른제목변경(1)}}>버튼2</button>
+      <button onClick={()=>{누른제목변경(2)}}>버튼3</button>
 
-      {modal === true ? <Modal></Modal> : null}
+      <button onClick={()=>{modal변경(!modal)}}>열고닫기</button>
+
+      {modal === true 
+      ? <Modal 프롭스={글제목} 누른제목={누른제목} 닫기버튼={modal변경}></Modal>
+       : null}
     </div>
   );
   
-  function Modal() {
+  
+}
+function Modal(props) {
     return (
       <>
-        <hr />
         <div className="modal">
-          <h2>제목</h2>
+          <h2>제목 : {props.프롭스[props.누른제목]}</h2>
           <p>날짜</p>
           <p>상세내용</p>
           <button
             onClick={() => {
-              modal변경(false);
+              props.modal변경(false);
             }}
           >
             X
@@ -98,6 +107,4 @@ function App() {
       </>
     );
   }
-}
-
 export default App;
