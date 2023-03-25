@@ -2,17 +2,31 @@
 .App {
   .Container{
     width:100%;
-    background-color: red;
     .Inner{
-      width:100%;
       margin:auto;
       max-width: 1400px;
       .banner-nav{
+        height:300px;
         width:100%;
+        background: url(../public/images/ManU_logo.jpg)  center center no-repeat ;
+        background-size: cover;
         h1{
+          color:white;
         }
       }
     }
   }
 }
 
+.player_box{
+  .player_img{}
+  .player_name{}
+  .player_backnumber{}
+  .player_position{}
+  .player_age{}
+  .player_nat{img{}}
+  .player_height{}
+  .player_foot{}
+  .player_value{}
+  .player_like{}
+}
