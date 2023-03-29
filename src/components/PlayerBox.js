@@ -17,14 +17,14 @@ const PlayerBox = () => {
     
     return(
       <>
-      {player.map(function () {
+      {player.map(function (a) {
         return(
         <>
           <div class = "player_box">
           <div class = "player_img">
             <img id="player_profile_img" src="./images/David_de_Gea_2017.jpg"  alt=""/>
           </div>
-          <h2 id = "player_name" >{player[0]}</h2>
+          <h2 id = "player_name" >{a}</h2>
           <p id= "player_backnumber">No :<span>1</span></p>
           <p id= "player_position">Position :<span>Goalkeeper</span></p>
           <p id= "player_age">Birth/Age :<span>Nov 7, 1990 (32)</span></p>
